@@ -5,7 +5,9 @@
  * Date: 2018/12/19
  * Time: 21:36
  */
+
 namespace App;
+
 class Adaptee
 {
     /**

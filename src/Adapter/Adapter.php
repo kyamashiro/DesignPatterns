@@ -8,24 +8,26 @@
 
 namespace App;
 
-class Adapter extends Adaptee implements Target
+class Adapter implements Target
 {
+    private $adaptee;
+
     /**
      * Adapter constructor.
      * @param string $string
      */
     public function __construct(string $string)
     {
-        parent::__construct($string);
+        $this->adaptee = new Adaptee($string);
     }
 
     public function printWeak(): void
     {
-        $this->showWithParen();
+        $this->adaptee->showWithParen();
     }
 
     public function printStrong(): void
     {
-        $this->showWithAster();
+        $this->adaptee->showWithAster();
     }
 }
