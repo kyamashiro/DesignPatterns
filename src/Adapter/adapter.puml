@@ -1,0 +1,26 @@
+@startuml
+
+class Adapter {
+ adaptee: Adaptee
+ printWeak()
+ printStrong()
+}
+
+class Adaptee {
+    string:string
+    showWithParen()
+    showWithAster()
+}
+
+interface Target {
+printWeak()
+printStrong()
+}
+
+class Client
+
+Target <-d- Client :use
+Target <|-r- Adapter :implements
+Adapter o-r-> Adaptee :has
+
+@enduml

@@ -11,7 +11,6 @@ namespace App;
 class Adapter implements Target
 {
     private $adaptee;
-
     /**
      * Adapter constructor.
      * @param string $string
