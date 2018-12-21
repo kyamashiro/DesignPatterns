@@ -150,3 +150,134 @@ $viewer->viewName($adapter);
 ```
 
 アダプティクラスの仕様を修正することなく､別のインターフェースへの拡張を容易にする｡
+
+インターフェースを使用したパターン｡
+
+```php
+<?php
+interface IMyPerson
+{
+    public function getName(): string;
+}
+```
+
+```php
+<?php
+class MyPersonA
+{
+    /**
+     * @var string
+     */
+    private $firstName;
+    /**
+     * @var string
+     */
+    private $lastName;
+
+    /**
+     * MyPersonA constructor.
+     * @param string $firstName
+     * @param string $lastName
+     */
+    public function __construct(string $firstName, string $lastName)
+    {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
+
+    public function getName(): string
+    {
+        return $this->getFirstName() . $this->getLastName();
+    }
+}
+```
+
+```php
+<?php
+class MyPersonB implements IMyPerson
+{
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * MyPersonB constructor.
+     * @param string $name
+     */
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+}
+```
+
+```php
+<?php
+class Adapter implements IMyPerson
+{
+    /**
+     * @var MyPersonA
+     */
+    private $person;
+
+    /**
+     * Adapter constructor.
+     * @param MyPersonA $person
+     */
+    public function __construct(MyPersonA $person)
+    {
+        $this->person = $person;
+    }
+
+    public function getName(): string
+    {
+        return $this->person->getName();
+    }
+}
+```
+
+```php
+<?php
+class MyNameViewer
+{
+    /**
+     * @param IMyPerson $person
+     */
+    public function viewName(IMyPerson $person): void
+    {
+        echo $person->getName();
+    }
+}
+```
+
+```php
+<?php
+$adapter = new Other\Adapter(new \Other\MyPersonA("Ken", "Thompson"));
+$viewer = new Other\MyNameViewer();
+$viewer->viewName($adapter);
+```

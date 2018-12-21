@@ -11,9 +11,9 @@ namespace Other;
 class MyNameViewer
 {
     /**
-     * @param MyPersonB $person
+     * @param IMyPerson $person
      */
-    public function viewName(MyPersonB $person): void
+    public function viewName(IMyPerson $person): void
     {
         echo $person->getName();
     }

@@ -45,4 +45,9 @@ class MyPersonA
     {
         return $this->lastName;
     }
+
+    public function getName(): string
+    {
+        return $this->getFirstName() . $this->getLastName();
+    }
 }

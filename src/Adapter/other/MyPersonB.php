@@ -8,7 +8,7 @@
 
 namespace Other;
 
-class MyPersonB
+class MyPersonB implements IMyPerson
 {
     /**
      * @var string

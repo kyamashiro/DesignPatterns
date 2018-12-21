@@ -8,7 +8,7 @@
 
 namespace Other;
 
-class Adapter extends MyPersonB
+class Adapter implements IMyPerson
 {
     /**
      * @var MyPersonA
@@ -26,6 +26,6 @@ class Adapter extends MyPersonB
 
     public function getName(): string
     {
-        return $this->person->getFirstName() . $this->person->getLastName();
+        return $this->person->getName();
     }
 }
