@@ -6,7 +6,7 @@
  * Time: 20:01
  */
 
-namespace App;
+namespace Other;
 
 class MyNameViewer
 {

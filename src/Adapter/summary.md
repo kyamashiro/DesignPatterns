@@ -5,7 +5,7 @@
 既存のクラスを修正することなく､適切なインターフェース(メソッド)を追加することができる｡
 
 2. 問題  
-使用したいデータや振る舞いが既存システム内に存在いているものの､そのインターフェースが正しくない場合｡
+使用したいデータや振る舞いが既存システム内に存在しているものの､そのインターフェースが正しくない場合｡
 
 3. 解決策  
 必要なインターフェースを保持したラッパーをAdapterによって提供する｡
@@ -114,3 +114,39 @@ Fatal error: Uncaught TypeError: Argument 1 passed to App\MyNameViewer::viewName
 当然MyPersonAを入れてもエラーになる｡
 
 こういうときにAdapterパターンを使う｡
+
+```php
+<?php
+class Adapter extends MyPersonB
+{
+    /**
+     * @var MyPersonA
+     */
+    private $person;
+
+    /**
+     * Adapter constructor.
+     * @param MyPersonA $person
+     */
+    public function __construct(MyPersonA $person)
+    {
+        $this->person = $person;
+    }
+
+    public function getName(): string
+    {
+        return $this->person->getFirstName() . $this->person->getLastName();
+    }
+}
+```
+
+MyPersonBをかぶせたAdapterを作成する｡
+
+```php
+<?php
+$adapter = new Other\Adapter(new \Other\MyPersonA("Ken", "Thompson"));
+$viewer = new Other\MyNameViewer();
+$viewer->viewName($adapter);
+```
+
+アダプティクラスの仕様を修正することなく､別のインターフェースへの拡張を容易にする｡

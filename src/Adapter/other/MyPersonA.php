@@ -6,7 +6,7 @@
  * Time: 20:00
  */
 
-namespace App;
+namespace Other;
 
 class MyPersonA
 {
