@@ -1,8 +1,9 @@
 {
   "autoload": {
     "psr-4": {
-      "App\\": "src/Adapter",
-      "Other\\": "src/Adapter/other"
+      "Adapter\\": "src/Adapter",
+      "Adapter\\Other\\": "src/Adapter/other",
+      "Strategy\\": "src/Strategy/other"
     }
   }
 }
