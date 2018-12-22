@@ -6,7 +6,7 @@
  * Time: 21:40
  */
 
-namespace App;
+namespace Adapter;
 
 class Adapter implements Target
 {

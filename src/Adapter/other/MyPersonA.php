@@ -6,7 +6,7 @@
  * Time: 20:00
  */
 
-namespace Other;
+namespace Adapter\Other;
 
 class MyPersonA
 {

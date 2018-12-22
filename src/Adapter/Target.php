@@ -6,7 +6,7 @@
  * Time: 21:33
  */
 
-namespace App;
+namespace Adapter;
 
 interface Target
 {

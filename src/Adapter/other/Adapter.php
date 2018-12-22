@@ -6,7 +6,7 @@
  * Time: 22:12
  */
 
-namespace Other;
+namespace Adapter\Other;
 
 class Adapter implements IMyPerson
 {

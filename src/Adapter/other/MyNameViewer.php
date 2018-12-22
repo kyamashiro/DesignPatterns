@@ -6,7 +6,7 @@
  * Time: 20:01
  */
 
-namespace Other;
+namespace Adapter\Other;
 
 class MyNameViewer
 {
