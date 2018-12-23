@@ -3,7 +3,8 @@
     "psr-4": {
       "Adapter\\": "src/Adapter",
       "Adapter\\Other\\": "src/Adapter/other",
-      "Strategy\\": "src/Strategy/other"
+      "Strategy\\": "src/Strategy/other",
+      "Strategy\\TYDP\\": "src/Strategy/TYDP"
     }
   }
 }
