@@ -4,7 +4,8 @@
       "Adapter\\": "src/Adapter",
       "Adapter\\Other\\": "src/Adapter/other",
       "Strategy\\": "src/Strategy/other",
-      "Strategy\\TYDP\\": "src/Strategy/TYDP"
+      "Strategy\\TYDP\\Before\\": "src/Strategy/TYDP/before",
+      "Strategy\\TYDP\\After\\": "src/Strategy/TYDP/after"
     }
   }
 }

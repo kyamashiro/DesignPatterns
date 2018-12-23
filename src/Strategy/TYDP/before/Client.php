@@ -6,7 +6,7 @@
  * Time: 13:26
  */
 
-namespace Strategy\TYDP;
+namespace Strategy\TYDP\Before;
 
 class Client
 {

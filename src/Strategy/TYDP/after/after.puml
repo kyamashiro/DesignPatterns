@@ -1,0 +1,32 @@
+@startuml
+
+class Client {
+    anOperation()
+}
+
+class DialectSpeaker {
+    sayWelcome()
+    sayThanks()
+}
+
+interface Dialect {
+    sayWelcome()
+    sayThanks()
+}
+
+class KyotoDialect {
+       sayWelcome()
+       sayThanks()
+}
+
+class NagoyaDialect {
+       sayWelcome()
+       sayThanks()
+}
+
+Client -r- DialectSpeaker
+DialectSpeaker o-r-> Dialect
+Dialect <.. KyotoDialect
+Dialect <.. NagoyaDialect
+
+@enduml
